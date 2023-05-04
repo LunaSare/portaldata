@@ -4,11 +4,21 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of portaldata is to showcase analysis using th ePortal Project Teaching data set.
+The main goal of `portaldata` is to showcase analysis using the Portal Project Teaching data set.
 
-![ ](https://files.worldwildlife.org/wwfcmsprod/images/African_Elephant_Kenya_112367/story_full_width/qxyqxqjtu_WW187785.jpg)
+Additionally, it contains some tips and tricks for building a website for an R package using `pkgdown`.
+
+Everything in this home page is in the file README.md.
+
+For example, to display the following image, add the line `![](man/figures/tree.png)`
 
 ![](man/figures/tree.png)
+
+
+Display the following image by adding the line
+`![ ](https://upload.wikimedia.org/wikipedia/commons/5/50/Kangaroo-rat.jpg)`
+
+![ ](https://upload.wikimedia.org/wikipedia/commons/5/50/Kangaroo-rat.jpg)
 
 ## Installation
 
