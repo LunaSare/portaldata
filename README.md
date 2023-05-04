@@ -4,14 +4,19 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of portaldata is to ...
+The goal of portaldata is to showcase analysis using th ePortal Project Teaching data set.
+
+![ ](https://files.worldwildlife.org/wwfcmsprod/images/African_Elephant_Kenya_112367/story_full_width/qxyqxqjtu_WW187785.jpg)
+
+![](man/figures/tree.png)
 
 ## Installation
 
 You can install the development version of portaldata like so:
 
 ``` r
-# FILL THIS IN! HOW CAN PEOPLE INSTALL YOUR DEV PACKAGE?
+library(devtools)
+install_github("LunaSare/portaldata")
 ```
 
 ## Example

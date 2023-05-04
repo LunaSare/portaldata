@@ -1,0 +1,67 @@
+---
+title: "trees"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{trees}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+library(rotl) # package to get trees from Open Tree of Life
+```
+
+Get some OTT ids for a set of taxa. For example "Canis lupus" and the genus "Homo":
+
+```{r}
+tnrs <- tnrs_match_names(c("Canis lupus", "Homo", "Felis catus", "Elephas", "Delphinus"))
+tnrs
+```
+
+Once with the OTT id, we can get all the children from a taxon
+
+
+```{r}
+tol_node_info(ott_id = tnrs$ott_id[1])
+```
+
+```{r}
+lupus_tree <- tol_subtree(node_id = "ott247341", label_format = "id") 
+lupus_tree$tip.label
+```
+
+Get the OTT ids for Homo
+
+```{r}
+tol_node_info(ott_id = tnrs$ott_id[2])
+```
+```{r}
+homo_tree <- tol_subtree(node_id = "ott770309", label_format = "id")
+homo_tree$tip.label
+```
+
+
+```{r}
+#remove ott prefix from tip label:
+my_ott_ids <- gsub("ott", "", c(lupus_tree$tip.label, homo_tree$tip.label))
+my_ott_ids
+all_ott_ids <- c(my_ott_ids, tnrs$ott_id[3:5])
+
+final_tree <- tol_induced_subtree(ott_ids = all_ott_ids, label_format = "name")
+```
+
+
+```{r}
+plot(final_tree, cex = 0.5)
+```
+
+
+
+
+
+
+
